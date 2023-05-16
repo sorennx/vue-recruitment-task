@@ -15,18 +15,19 @@
 
 <script>
 export default {
-  name: 'CustomInput',
+  name: "CustomInput",
   data() {
     return {
-      inputGradientValue: 'linear-gradient(109.6deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236) 100.2%)',
-    }
+      inputGradientValue:
+        "linear-gradient(109.6deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236) 100.2%)",
+    };
   },
   methods: {
     updateGradient() {
-      this.$emit('gradient-input-updated', this.inputGradientValue)
+      this.$emit("gradient-input-updated", this.inputGradientValue);
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -47,7 +48,6 @@ export default {
   background: transparent;
   transition: border-color 0.2s;
   cursor: text;
-
 }
 
 .form_label {

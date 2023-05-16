@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="content-wrapper content-wrapper_col content-wrapper_center">
-      <CustomSquare :show-square="showSquare" :gradient-value="gradientValue"/>
+      <CustomSquare :show-square="showSquare" :gradient-value="gradientValue" />
       <CustomButton @toggle-square="toggleSquare" />
       <CustomInput @gradient-input-updated="updateGradientValue" />
     </div>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import CustomButton from './components/CustomButton.vue'
-import CustomSquare from './components/CustomSquare.vue'
-import CustomInput from './components/CustomInput.vue'
+import CustomButton from "./components/CustomButton.vue";
+import CustomSquare from "./components/CustomSquare.vue";
+import CustomInput from "./components/CustomInput.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     CustomButton,
     CustomSquare,
@@ -23,19 +23,20 @@ export default {
   data() {
     return {
       showSquare: false,
-      gradientValue: 'linear-gradient(109.6deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236) 100.2%)',
-    }
+      gradientValue:
+        "linear-gradient(109.6deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236) 100.2%)",
+    };
   },
   methods: {
     toggleSquare() {
-      this.showSquare = !this.showSquare
+      this.showSquare = !this.showSquare;
     },
     updateGradientValue(value) {
-      this.gradientValue = value
+      this.gradientValue = value;
       console.log(this.gradientValue);
     },
   },
-}
+};
 </script>
 
 <style>

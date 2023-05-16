@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'CustomSquare',
+  name: "CustomSquare",
   props: {
     showSquare: {
       type: Boolean,
@@ -20,13 +20,13 @@ export default {
     computeClass: function () {
       // `display:hidden` property is applied instead of using `v-show` or `v-if` in order to have square-cont
       // retain its space -> `v-show` sets display to `none` and `v-if` woulnd not render the element at all in DOM
-      return this.showSquare ? 'square-cont' : 'square-cont square-cont_hidden'
+      return this.showSquare ? "square-cont" : "square-cont square-cont_hidden";
     },
     computeGradient() {
-      return this.showSquare ? this.gradientValue : ''
+      return this.showSquare ? this.gradientValue : "";
     },
   },
-}
+};
 </script>
 
 <style scoped>

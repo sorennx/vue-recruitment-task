@@ -8,24 +8,24 @@
 
 <script>
 export default {
-  name: 'CustomButton',
+  name: "CustomButton",
   data() {
     return {
       isSquareShown: false,
-    }
+    };
   },
   methods: {
     toggleSquare() {
-      this.isSquareShown = !this.isSquareShown
-      this.$emit('toggle-square')
+      this.isSquareShown = !this.isSquareShown;
+      this.$emit("toggle-square");
     },
   },
   computed: {
     buttonText() {
-      return this.isSquareShown ? 'Hide square' : 'Show square'
+      return this.isSquareShown ? "Hide square" : "Show square";
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -33,7 +33,11 @@ export default {
   margin: 2rem;
   padding: 0.2rem 0.5rem;
   border: none;
-  background: linear-gradient(170deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236));
+  background: linear-gradient(
+    170deg,
+    rgb(62, 161, 219) 11.2%,
+    rgb(93, 52, 236)
+  );
   color: #ffffff;
   cursor: pointer;
   transition: background 0.45s ease-out;

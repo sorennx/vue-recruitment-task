@@ -15,3 +15,8 @@ The task was done with the following approach:
 3. The value instead of simply being displayed is now passed to the parent component and then to the `CustomSquare` component in order to change the `background` property of the square.
 
 ## Task 3
+3. Wykorzystaj komponent z zadania drugiego i utwórz dwa inputy, które będą przechowywały wartość w zmiennych. Utwórz metodę, która po kliknięciu utworzy dwie tablice z inputów, każda wartość znajdująca się np. po przecinku powinna być nową wartością w tablicy, następnie metoda powinna przypisać do zmiennej newArray, tablice z inputa 1  bez elementów znajdujących się w tablicy inputa 2.Wyświetl nową tablicę jako listę.
+
+Przykład newArray - tablica a = [‘a’,’b’,’c’] tablica b= [‘b’], tablica newA
+
+robert.hapka@machineportal.com
