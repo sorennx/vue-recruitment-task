@@ -26,10 +26,12 @@ export default {
       return this.showSquare ? "square-cont" : "square-cont square-cont_hidden";
     },
     // Compute the color of the gradient based on the values that are being passed from the two inputs
-    // `gradientValue1` - the starting color of the gradient 
-    // `gradientValue2` - the ending color of the gradient 
+    // `gradientValue1` - the starting color of the gradient
+    // `gradientValue2` - the ending color of the gradient
     computeGradient() {
-      return this.showSquare ? `linear-gradient(109.6deg, rgb(${this.gradientValue1}) 11.2%, rgb(${this.gradientValue2}) 100.2%)` : "";
+      return this.showSquare
+        ? `linear-gradient(109.6deg, rgb(${this.gradientValue1}) 11.2%, rgb(${this.gradientValue2}) 100.2%)`
+        : "";
     },
   },
 };

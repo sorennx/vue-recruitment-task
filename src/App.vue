@@ -24,11 +24,11 @@
         id="xor_container"
       >
         <label for="xor" class="text_grayed-out">
-          gradientValue1 \ gradientValue2 = </label
-        >
+          gradientValue1 \ gradientValue2 =
+        </label>
         <div id="xor">
           {{
-            diffArray.length === 0
+            diffArray.length === 0 && !showSquare
               ? "Show the square to calculate the difference"
               : diffArray
           }}
@@ -54,7 +54,7 @@ export default {
     return {
       showSquare: false,
       gradientValue1: "62, 161, 219",
-      gradientValue2: "93, 52, 236",
+      gradientValue2: "93, 52, 219",
       diffArray: [],
     };
   },

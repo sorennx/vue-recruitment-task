@@ -15,13 +15,11 @@ The task was done with the following approach:
 3. The value instead of simply being displayed is now passed to the parent component and then to the `CustomSquare` component in order to change the `background` property of the square.
 
 ## Task 3
-The goal of the task was to use two inputs components defined in the previous task. The following improvements were made and/or added:
+The goal of the task was to use two inputs components defined in the previous task. The following assumptions and/or improvements were made:
 1. Input component was overhauled, its purpose is to accept a 3 numbers from an inclusive range 0 through 255, seperated by a comma. A method was added to validate its current value - if user types in a value that doesn't meet the above requirements the color of the text changes to red.
 2. To make changing color of the square easier, gradient is now computed based on the values from the two input components - first one sets the starting color, the second one controlls the ending color. This way, the user is required to only input RGB values, i.e `30, 50, 90` instead of the whole `linear-gradient(...)` string.
-3. To meet the other requirements of the task - manipulating the arrays - two arrays were created based on the string values from the inputs and the XOR value is displayed below the input compontents.
+3. To meet the other requirements of the task - manipulating the arrays - two arrays were created based on the string values from the inputs and the difference of those two sets (arrays) is displayed below the input compontents as a list. If the resulting array is empty, `[]` is displayed indicating that the array exists, though it doesn't contain any elements whatsoever.
+4. The default `B` for the `RGB` in both inputs was set to the same value to speed up the testing process.
 
-3. Wykorzystaj komponent z zadania drugiego i utwórz dwa inputy, które będą przechowywały wartość w zmiennych. Utwórz metodę, która po kliknięciu utworzy dwie tablice z inputów, każda wartość znajdująca się np. po przecinku powinna być nową wartością w tablicy, następnie metoda powinna przypisać do zmiennej newArray, tablice z inputa 1  bez elementów znajdujących się w tablicy inputa 2.Wyświetl nową tablicę jako listę.
-
-Przykład newArray - tablica a = [‘a’,’b’,’c’] tablica b= [‘b’], tablica newA
-
-robert.hapka@machineportal.com
+## End notes
+To sum up, the 3 main tasks were compiled into one view / application and each following task improved the solution from the previous version of the app. Though I've tried inspecting css of machineportal.com (https://machineportal.com/css/app.164ffaaf.css), I wasn't exactly sure of the guidelines and it is most likely a subject to change. A similar logic applies to *.vue files code formatting - personally I was using VSC extension prettier to take care of it and adjusting the style should the need for it arise will not be a problem.
