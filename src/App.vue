@@ -1,9 +1,39 @@
 <template>
   <div id="app">
     <div class="content-wrapper content-wrapper_col content-wrapper_center">
-      <CustomSquare :show-square="showSquare" :gradient-value="gradientValue" />
+      <CustomSquare
+        :show-square="showSquare"
+        :gradient-value1="gradientValue1"
+        :gradient-value2="gradientValue2"
+      />
       <CustomButton @toggle-square="toggleSquare" />
-      <CustomInput @gradient-input-updated="updateGradientValue" />
+      <CustomInput
+        @gradient-input-updated="updateGradientValue1"
+        :gradient-default-value="gradientValue1"
+      >
+        Gradient start color (R, G, B)
+      </CustomInput>
+      <CustomInput
+        @gradient-input-updated="updateGradientValue2"
+        :gradient-default-value="gradientValue2"
+      >
+        Gradient end color (R, G, B)
+      </CustomInput>
+      <div
+        class="content-wrapper content-wrapper_col content-wrapper_center"
+        id="xor_container"
+      >
+        <label for="xor" class="text_grayed-out">
+          gradientValue1 \ gradientValue2 = </label
+        >
+        <div id="xor">
+          {{
+            diffArray.length === 0
+              ? "Show the square to calculate the difference"
+              : diffArray
+          }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -23,16 +53,31 @@ export default {
   data() {
     return {
       showSquare: false,
-      gradientValue:
-        "linear-gradient(109.6deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236) 100.2%)",
+      gradientValue1: "62, 161, 219",
+      gradientValue2: "93, 52, 236",
+      diffArray: [],
     };
   },
   methods: {
     toggleSquare() {
       this.showSquare = !this.showSquare;
+      if (this.showSquare) {
+        this.createNewArray();
+      } else {
+        this.diffArray = [];
+      }
     },
-    updateGradientValue(value) {
-      this.gradientValue = value;
+    updateGradientValue1(value) {
+      this.gradientValue1 = value;
+    },
+    updateGradientValue2(value) {
+      this.gradientValue2 = value;
+    },
+    createNewArray() {
+      const array1 = this.gradientValue1.split(",").map((item) => item.trim());
+      const array2 = this.gradientValue2.split(",").map((item) => item.trim());
+
+      this.diffArray = array1.filter((item) => !array2.includes(item));
     },
   },
 };
@@ -61,5 +106,13 @@ body {
 
 .content-wrapper_center {
   align-items: center;
+}
+
+#xor_container {
+  margin-top: 1rem;
+}
+
+#xor_container * {
+  color: #96979b;
 }
 </style>
