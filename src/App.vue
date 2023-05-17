@@ -33,7 +33,6 @@ export default {
     },
     updateGradientValue(value) {
       this.gradientValue = value;
-      console.log(this.gradientValue);
     },
   },
 };
